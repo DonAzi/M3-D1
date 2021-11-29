@@ -3,28 +3,79 @@
 function calcTheSum(one, two) {
   if (one === two) {
     return console.log((one + two) * 3);
+  } else {
+    console.log("Values are not equal");
   }
 }
-calcTheSum();
+calcTheSum(3, 3);
 
 /* 2. Create a function to check two given integers. Return `true` if one of them is 50 or if their sum is 50. */
+function checkInts(fi, se) {
+  if (fi === 50 || se === 50) {
+    return true;
+  } else if (fi + se) {
+    return true;
+  } else {
+    console.log("Please have a coffee and calm your brain cells");
+  }
+}
+checkInts(45, 66);
 
 /* 3. Create a function to remove a character at a specified position from a given string: pass the position and the string as parameters, return the new string. */
-
+function removeCharacter(stri, charNum) {
+  let charToRemove = stri.slice(charNum, charNum + 1);
+  return stri.replace(charToRemove, "");
+}
 /* 4. Create a function to find and return the largest of three given integers. */
-
+const findLargestInt = function (int1, int2, int3) {
+  if (int1 > int2 && int1 > int3) {
+    return int1;
+  } else if (int2 > int1 && int2 > int3) {
+    return int2;
+  } else {
+    return int3;
+  }
+};
 /* 5. Create a function to check if two numbers are in the range 40-60 or 70-100. 
     Return `true` if they do, return `false` if one (or both) don't. */
-
+const checkIfBetween = function (firstNo1, firstNo2) {
+  if (firstNo1 >= 40 && firstNo1 <= 60 && firstNo2 >= 40 && firstNo2 <= 60) {
+    return true;
+  } else if (
+    firstNo1 >= 70 &&
+    firstNo1 <= 100 &&
+    firstNo2 >= 70 &&
+    firstNo2 <= 100
+  ) {
+    return true;
+  } else {
+    return "check it again";
+  }
+};
 /* 6. Create a function to create a new string composed of a specified number of copies of a given string. 
     Pass the string and the number of copies as parameters. */
+const createString = function (str, numOfCopies) {
+  let newStr = "";
+  for (let i = 0; i < numOfCopies; i++) {
+    newStr = newStr.concat(str, " ");
+  }
+  return newStr;
+};
 
 /* 7. Create a function to display the city name if the string begins with "Los" or "New". 
     Pass the city name as a parameter. Return `false` if they start with a different string. */
-
+const displayCityName = function (cityName) {
+  if (cityName.slice(0, 3) === "Los" || cityName.slice(0, 3) === "New") {
+    return cityName;
+  } else {
+    return false;
+  }
+};
 /* 8. Create a function to calculate and return the sum of all elements from an array with 3 elements. 
     Pass the array as a parameter. */
-
+function sumArrayElements(threeArr) {
+  return threeArr[0] + threeArr[1] + threeArr[2];
+}
 /* 9. Create a function to test if an array of lenght 2 contains 1 OR 3. 
     Return `true` is it does, `false` if it doesn't. */
 
