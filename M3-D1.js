@@ -4,7 +4,6 @@ function calcTheSum(one, two) {
   if (one === two) {
     return console.log((one + two) * 3);
   } else {
-    console.log("Values are not equal");
   }
 }
 calcTheSum(3, 3);
@@ -13,29 +12,39 @@ calcTheSum(3, 3);
 function checkInts(fi, se) {
   if (fi === 50 || se === 50) {
     return true;
-  } else if (fi + se) {
+  } else if (fi + se === 50) {
     return true;
   } else {
-    console.log("Please have a coffee and calm your brain cells");
+    console.log(
+      "Natural Error: Please have a coffee and calm your brain cells"
+    );
   }
 }
-checkInts(45, 66);
-
+console.log(checkInts(50, 50));
 /* 3. Create a function to remove a character at a specified position from a given string: pass the position and the string as parameters, return the new string. */
-function removeCharacter(stri, charNum) {
-  let charToRemove = stri.slice(charNum, charNum + 1);
-  return stri.replace(charToRemove, "");
+function removeCharacter(string, position) {
+  // let charToRemove = stri.slice(charNum, charNum + 1);
+  // return stri.replace(charToRemove, "");
+  return string.slice(0, position) + string.slice(position + 1);
 }
+console.log(removeCharacter("Strive", 2));
+
 /* 4. Create a function to find and return the largest of three given integers. */
-const findLargestInt = function (int1, int2, int3) {
-  if (int1 > int2 && int1 > int3) {
-    return int1;
-  } else if (int2 > int1 && int2 > int3) {
-    return int2;
-  } else {
-    return int3;
-  }
+// const findLargestInt = function (int1, int2, int3) {
+//   if (int1 > int2 && int1 > int3) {
+//     return int1;
+//   } else if (int2 > int1 && int2 > int3) {
+//     return int2;
+//   } else {
+//     return int3;
+//   }
+// };
+// Tetiana's option
+const findLargestInt = (...args) => {
+  let largestInt = args.sort((a, b) => b - a);
+  return largestInt[0];
 };
+console.log(findLargestInt(34, 444, 13, 1055, 98));
 /* 5. Create a function to check if two numbers are in the range 40-60 or 70-100. 
     Return `true` if they do, return `false` if one (or both) don't. */
 const checkIfBetween = function (firstNo1, firstNo2) {
@@ -52,6 +61,7 @@ const checkIfBetween = function (firstNo1, firstNo2) {
     return "check it again";
   }
 };
+console.log(checkIfBetween(41, 42));
 /* 6. Create a function to create a new string composed of a specified number of copies of a given string. 
     Pass the string and the number of copies as parameters. */
 const createString = function (str, numOfCopies) {
@@ -61,6 +71,7 @@ const createString = function (str, numOfCopies) {
   }
   return newStr;
 };
+console.log(createString("Bye2bye", 2));
 
 /* 7. Create a function to display the city name if the string begins with "Los" or "New". 
     Pass the city name as a parameter. Return `false` if they start with a different string. */
@@ -71,6 +82,7 @@ const displayCityName = function (cityName) {
     return false;
   }
 };
+console.log(displayCityName("NowYork"));
 /* 8. Create a function to calculate and return the sum of all elements from an array with 3 elements. 
     Pass the array as a parameter. */
 function sumArrayElements(threeArr) {
