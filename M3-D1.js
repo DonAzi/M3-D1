@@ -88,15 +88,42 @@ console.log(displayCityName("NowYork"));
 function sumArrayElements(threeArr) {
   return threeArr[0] + threeArr[1] + threeArr[2];
 }
-/* 9. Create a function to test if an array of lenght 2 contains 1 OR 3. 
+console.log(sumArrayElements([9, 91, " is my age eih"]));
+
+/* 9. Create a function to test if an array of length 2 contains 1 OR 3. 
     Return `true` is it does, `false` if it doesn't. */
+
+const isThereOneOrTwo = (arr) => {
+  if (arr.includes(1) || arr.inludes(3)) {
+    return true;
+  } else {
+    return false;
+  }
+};
+isThereOneOrTwo([1, 7]);
 
 /* 10. Create a function to test if an array of lenght 2 DOES NOT contain 1 or 3. 
     Return `true` if it doesn't, `false` if it does. */
-
+function ifDoesNotThere(arr) {
+  if (!isThereOneOrTwo(arr)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+// console.log(ifDoesNotThere([3, 6]));
 /* 11. Create a function to find the longest string from a given array of strings. 
     Pass the array as parameter and return the longest string. */
 
+function longestStringInArray(stringest) {
+  const temp = [];
+  for (let i = 0; i < stringest.length; i++) {
+    temp.push(stringest[i].length);
+  }
+  const giantic = temp.sort((a, b) => b - a);
+  console.log(giantic[0]);
+}
+longestStringInArray(["Lidia", "Stefano", "Alessia"]);
 /* 12. Create a function to find the types of a given angle:
   1. Acute angle ⇒ between 0 and 90 degrees. Return `acute`.
     2. Right angle ⇒ 90 degree. Return `right`
