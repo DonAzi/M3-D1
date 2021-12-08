@@ -105,13 +105,13 @@ isThereOneOrTwo([1, 7]);
 /* 10. Create a function to test if an array of lenght 2 DOES NOT contain 1 or 3. 
     Return `true` if it doesn't, `false` if it does. */
 function ifDoesNotThere(arr) {
-  if (!isThereOneOrTwo(arr)) {
+  if (arr.includes(1) || arr.includes(3)) {
     return true;
   } else {
     return false;
   }
 }
-// console.log(ifDoesNotThere([3, 6]));
+console.log(ifDoesNotThere([2, 9]));
 /* 11. Create a function to find the longest string from a given array of strings. 
     Pass the array as parameter and return the longest string. */
 
@@ -132,6 +132,20 @@ longestStringInArray(["Lidia", "Stefano", "Alessia"]);
 
     Pass the angle as a parameter.
 */
+function findAngle(angl) {
+  if (angl > 0 && angl < 90) {
+    console.log("Acute angle");
+  } else if (angl === 90) {
+    console.log("Right angle");
+  } else if (angl > 90 && angl < 180) {
+    console.log("Obtuse angle");
+  } else if (angl === 180) {
+    return console.log("Straight");
+  } else {
+    console.error(TypeError);
+  }
+}
+findAngle(181);
 
 /* 13. Create a function to find and return the index of the greatest element of a given array of integers that you passed as a parameter. */
 
