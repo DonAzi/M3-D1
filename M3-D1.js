@@ -145,28 +145,95 @@ function findAngle(angl) {
     console.error(TypeError);
   }
 }
-findAngle(181);
+findAngle(180);
 
 /* 13. Create a function to find and return the index of the greatest element of a given array of integers that you passed as a parameter. */
+function findLarges(arr) {
+  let result = arr.indexOf(Math.max.apply(null, arr));
+  return result;
+}
+// console.log(result);
 
+console.log(findLarges([12, 345, 6789, 0]));
 /* 14. Create a function to find and return the largest **even** number from an array of integers that is passed a parameter. */
+
+const findLargestEvenNum = function (anotherArr) {
+  let emptyArr = [];
+
+  for (let i = 0; i < anotherArr.length; i++) {
+    let arrWrapper = anotherArr[i];
+
+    if (arrWrapper % 2 === 0) {
+      return emptyArr.push(arrWrapper);
+    } else {
+      return "NaEn";
+    }
+  }
+};
+
+console.log(findLargestEvenNum([42, 53, 49]));
 
 /* 15. Create a function to check from two given integers (passed as parameters) if one is positive and the other is negative. 
     Return `true` if that's the case, return `false` if it's not. */
 
+function checkPosOrNegative(one, two) {
+  if (Math.sign(one) > -1 && Math.sign(two) < 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+console.log(checkPosOrNegative(0, -1));
 /* 16. Create a function to create and return a new string where the first 3 characters and in lower case and the others are in upper case. 
     If the string's length is less than 3, convert the whole string into uppercase. Pass the original string as a parameter. */
 
+function createFunction(str) {
+  if (str < 3) {
+    return str.toUpperCase();
+  } else return str.slice(0, 3).toUpperCase() + str.slice(3).toLowerCase();
+}
+console.log(createFunction("Haha"));
+
 /* 17. Create a function to calculate the sum of two integers (passed as parameters). 
     If the sum is in the 50-80 range, return `65`, otherwise, return `80`. */
-
+const calculateTheSum = function (param1, param2) {
+  let sum = param1 + param2;
+  return sum > 50 && sum < 80 ? 65 : 80;
+};
+console.log(calcTheSum(19, 98)); //why it did not work ?
 /* 18. Create a function to convert a number (passed as a parameter) into a string, basing yourself on this example: 
     The number has 3 as a factor ⇒ return `Diego`
     The number has 5 as a factor ⇒ return `Riccardo`
     The number has 7 as a factor ⇒ return `Stefano`
     If the number does not have 3,5, or 7, return the original number. 
     ⚠️ The factor is an integer which evenly divides a number without leaving a remainder. One number can have more than one factor, in that case you should return both names. 
+    
 Ex. 15 has both 3 and 5 has factors: the function will return `DiegoRiccardo` */
 
+const convertToString = (num) =>
+  //
+  {
+    let toBe = "";
+    if (num % 3 !== 0 && num % 5 !== 0 && num % 7 !== 0) {
+      return num;
+    }
+    if (num % 3 === 0) toBe += "Diego";
+    if (num % 5 === 0) toBe += "Riccardo";
+    if (num % 7 === 0) toBe += "Stefano";
+    return toBe;
+  };
+console.log(convertToString(49090909099995));
 /* 19. Create a function that that takes a phrase as a parameter and returns its acronym.
 Ex. British Broadcasting Corporation returns `BBC` */
+
+const convertToAcronym = (str) => {
+  let emptyString = str.split(" ");
+  let arr = [];
+
+  for (let o = 0; o < emptyString.length; o++) {
+    let letter = emptyString[o];
+    arr.push(letter.charAt(0).toUpperCase());
+  }
+  return arr.join("");
+};
+console.log(convertToAcronym("world health organisation"));
